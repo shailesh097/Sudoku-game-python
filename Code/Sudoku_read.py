@@ -44,4 +44,4 @@ if __name__ != '__main__':
 		board = choice(board_list)
 		return board
 else:
-	print("This function is not desined to run on its own.")
+	print("This program is not desined to run on its own.")
