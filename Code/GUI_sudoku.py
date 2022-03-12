@@ -1,17 +1,11 @@
 # GUI.py
 import pygame
-
-import sudoku_re
-from sudoku_re import solve, valid
 import time
 from Sudoku_read import random_board
 pygame.font.init()
 
-
-
 class Grid:
     board = random_board()
-
     def __init__(self, rows, cols, width, height):
         self.rows = rows
         self.cols = cols
@@ -92,7 +86,6 @@ class Grid:
                     return False
         return True
 
-
 class Cube:
     rows = 9
     cols = 9
@@ -129,7 +122,6 @@ class Cube:
     def set_temp(self, val):
         self.temp = val
 
-
 def redraw_window(win, board, time, strikes):
     win.fill((255, 255, 255))
     # Draw time
@@ -142,7 +134,6 @@ def redraw_window(win, board, time, strikes):
     # Draw grid and board
     board.draw(win)
 
-
 def format_time(secs):
     sec = secs % 60
     minute = secs // 60
@@ -150,7 +141,6 @@ def format_time(secs):
 
     mat = " " + str(minute) + ":" + str(sec)
     return mat
-
 
 def main():
     win = pygame.display.set_mode((540, 600))
@@ -161,9 +151,7 @@ def main():
     start = time.time()
     strikes = 0
     while run:
-
         play_time = round(time.time() - start)
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -216,7 +204,7 @@ def main():
         redraw_window(win, board, play_time, strikes)
         pygame.display.update()
 
-
-main()
-pygame.quit()
-solve.py
+if __name__ == '__main__':
+    main()
+    pygame.quit()
+    solve.py
