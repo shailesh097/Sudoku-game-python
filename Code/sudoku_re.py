@@ -1,7 +1,5 @@
 from Sudoku_read import random_board
 
-
-
 def solve(bo):
     find = find_empty(bo)  # puts the empty position value row and col in find var
     if not find:  # if not find means it catches None from find_empty function
@@ -56,8 +54,6 @@ def print_board(bo):
                 print(" | ", end="")
             if j == 8:
                 print(str(bo[i][j]) + " | ")
-
-
             else:
                 print((bo[i][j]), end=" ")
     print(" - - - - - - - - - - - - - -")
